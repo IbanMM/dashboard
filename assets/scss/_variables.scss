@@ -11,3 +11,11 @@ $grey-400: #637280;
 $primary: $blue;
 
 $font-family: 'Lato', sans-serif;
+
+$break-points: (
+    'sm': '640px',
+    'md': '768px',
+    'lg': '1024px',
+    'xl': '1280px',
+    '2xl': '1536px'
+);
