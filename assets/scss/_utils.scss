@@ -1,4 +1,29 @@
+/** 
+* SVG icon size
+* 
+*/
 .icon {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+/** 
+* Flex utilities
+* 
+*/
+@each $name, $size in $break-points {
+  @include media-up($name) {
+    .flex-#{$name} {
+      display: flex;
+    }
+    .justify-end-#{$name} {
+      justify-content: flex-end;
+    }
+    .justify-start-#{$name} {
+      justify-content: flex-start;
+    }
+    .align-items-#{$name} {
+      align-items: center;
+    }
+  }
 }
