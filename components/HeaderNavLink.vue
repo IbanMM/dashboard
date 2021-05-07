@@ -1,7 +1,7 @@
 <template>
-  <n-link class="sidebar-link" :to="route">
+  <n-link class="header-link" :to="route">
     <span class="sidebar-icon-container">
-      <svg-icon class="sidebar-icon" :name="icon" />
+      {{ text }}
     </span>
   </n-link>
 </template>
@@ -9,38 +9,32 @@
 <script>
 export default {
   props: {
-    icon: {
+    text: {
       type: String,
       default: ''
     },
     route: {
       type: String,
-      default: ''
+      default: '/'
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .sidebar-link {
+  .header-link {
     @include media-up('lg') {
-      padding: 1.2rem 0;
+      padding: 1.4rem 0;
+      text-decoration: none;
       display: block;
-      border-right: 3px solid transparent;
+      border-bottom: 3px solid transparent;
       color: $grey-300;
-      margin: 3rem 0;
+      margin: 0 3rem;
       transition: all .3s linear;
       &.nuxt-link-exact-active {
-        border-right: 3px solid $primary;
+        border-bottom: 3px solid $primary;
         color: $primary;
       }
     }
-  }
-  .sidebar-icon-container {
-    display: flex;
-    justify-content: center;
-  }
-  .sidebar-icon {
-    fill: $grey-300;
   }
 </style>

@@ -1,9 +1,33 @@
 <template>
-  <div class="header">
-    <div>
-      <img src="" alt="">
-    </div>
-  </div>
+  <header class="header">
+    <div>avatar</div>
+    <nav>
+      <ul class="header-nav">
+        <li>
+          <header-nav-link
+            :text="'Overview'"
+            :route="'/'"
+          />
+        </li>
+        <li>
+          <header-nav-link
+            :text="'Campaings'"
+            :route="'campaings'"
+          />
+        </li>
+        <li>
+          <header-nav-link
+            :text="'Analytics'"
+            :route="'analytics'"
+          />
+        </li>
+      </ul>
+    </nav>
+    <button-ui
+      :text="'Premium'"
+      :state="'primary'"
+    />
+  </header>
 </template>
 
 <script>
@@ -17,5 +41,17 @@ export default {
     height: $header-height;
     border-bottom: 1px solid rgba($grey-100, 0.2);
     background-color: #fff;
+    padding: 1rem;
+    @include media-up('lg') {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  .header-nav {
+    @include media-up('lg') {
+      display: flex;
+      align-items: center;
+    }
   }
 </style>

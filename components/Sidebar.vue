@@ -37,7 +37,7 @@
   </aside>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .sidebar {
     grid-area: sidebar;
     background-color: $light;
