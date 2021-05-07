@@ -1,0 +1,18 @@
+/** 
+* A simple grid
+* 
+*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+[class*=col] {
+  padding: ($grid-gutter / 2);
+}
+
+@each $name, $size in $break-points {
+  @include media-up($name) {
+    @include grid-generate($name);
+  }
+}

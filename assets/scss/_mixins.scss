@@ -5,3 +5,15 @@
 @mixin media-up($size) {
   @media (min-width: map-get($break-points, $size)) { @content; }
 }
+
+/** 
+* Mixin for generate a simple grid columns
+* 
+*/
+@mixin grid-generate($break-point) {
+  @for $column from 1 to $grid-columns+1 {
+    .col-#{$break-point}-#{$column} {
+        width: (100% * $column) / $grid-columns;
+    }
+  }
+}
