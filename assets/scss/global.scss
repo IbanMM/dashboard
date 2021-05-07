@@ -1,4 +1,8 @@
+@import 'mixins';
 @import 'reset';
+@import 'layout';
+@import 'utils';
+
 
 *, ::after, ::before {
   box-sizing: border-box;
@@ -6,11 +10,4 @@
 
 body {
   font-family: $font-family;
-}
-
-.sidebar-nav {
-  background-color: red;
-  @include media-up('xl') {
-    background-color: $primary;
-  }
 }

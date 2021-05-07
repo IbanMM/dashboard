@@ -1,3 +1,7 @@
+/** 
+* Color variables
+* 
+*/
 $blue: #0077ff;
 $blue-100: #b3d6ff;
 $red: #f0166d;
@@ -7,11 +11,29 @@ $grey-100: #b4bac6;
 $grey-200: #a6afb7;
 $gray-300: #8a96a0;
 $grey-400: #637280;
+$light: #fff;
+$light-100: #fafbfc;
 
 $primary: $blue;
 
+$border-color: $grey-100;
+
+/** 
+* Typo variables
+* 
+*/
 $font-family: 'Lato', sans-serif;
 
+/** 
+* Layout variables
+* 
+*/
+$header-height: 4rem;
+
+/** 
+* Break points map
+* 
+*/
 $break-points: (
     'sm': '640px',
     'md': '768px',

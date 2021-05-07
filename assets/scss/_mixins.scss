@@ -3,7 +3,6 @@
 * 
 */
 @use "sass:map";
-
 @mixin media-up($size) {
   @media (min-width: map.get($break-points, $size)) { @content; }
 }
