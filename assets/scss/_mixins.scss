@@ -2,7 +2,6 @@
 * Mixin for generate media queries
 * 
 */
-@use "sass:map";
 @mixin media-up($size) {
-  @media (min-width: map.get($break-points, $size)) { @content; }
+  @media (min-width: map-get($break-points, $size)) { @content; }
 }

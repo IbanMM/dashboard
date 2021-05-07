@@ -1,10 +1,39 @@
 <template>
   <aside class="sidebar sidebar-nav">
-    <svg-icon class="icon" name="chat" />
-    <svg-icon class="icon" name="dashboard" />
-    <svg-icon class="icon" name="envelope" />
-    <svg-icon class="icon" name="folder" />
-    <svg-icon class="icon" name="settings" />
+    <nav>
+      <ul>
+        <li>
+          <sidebar-nav-link
+            :icon="'dashboard'"
+            :route="'/'"
+          />
+        </li>
+        <li>
+          <sidebar-nav-link
+            :icon="'chat'"
+            :route="'/chat'"
+          />
+        </li>
+        <li>
+          <sidebar-nav-link
+            :icon="'envelope'"
+            :route="'/messages'"
+          />
+        </li>
+        <li>
+          <sidebar-nav-link
+            :icon="'folder'"
+            :route="'/files'"
+          />
+        </li>
+        <li>
+          <sidebar-nav-link
+            :icon="'settings'"
+            :route="'/settings'"
+          />
+        </li>
+      </ul>
+    </nav>
   </aside>
 </template>
 
@@ -14,6 +43,5 @@
     background-color: $light;
     min-height: calc( 100vh - #{$header-height});
     border-right: 1px solid rgba($grey-100, 0.2);
-    padding: 1rem 0.8rem;
   }
 </style>
