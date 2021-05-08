@@ -37,5 +37,8 @@
     .align-end-#{$name} {
       align-items: flex-end;
     }
+    .flex-col-#{$name} {
+      flex-direction: column;
+    }
   }
 }
