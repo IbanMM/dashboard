@@ -52,7 +52,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: process.env.NODE_ENV === 'production' ? 'https://jsonplaceholder.typicode.com/' : 'https://jsonplaceholder.typicode.com/'
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
