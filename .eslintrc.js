@@ -15,6 +15,7 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    'object-shorthand': 'off'
+    'object-shorthand': 'off',
+    'no-unused-vars': 'off'
   }
 }
