@@ -37,6 +37,7 @@ export default {
   cursor: pointer;
   border: none;
   transition: all .2s linear;
+  min-width: 4.1875rem;
 }
 .button-primary {
   background-color: $primary;
