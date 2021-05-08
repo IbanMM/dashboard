@@ -12,10 +12,10 @@ $grey-200: #a6afb7;
 $grey-300: #8a96a0;
 $grey-400: #637280;
 $grey-500: #eceff3;
+$grey-600: #acb5bc;
 $light: #fff;
 $light-100: #fafbfc;
 $dark: #000;
-
 
 $primary: $blue;
 
@@ -45,6 +45,7 @@ $header-height: 4rem;
 * 
 */
 $break-points: (
+    'xs': '1px',
     'sm': '640px',
     'md': '768px',
     'lg': '1024px',

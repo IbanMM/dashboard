@@ -22,8 +22,20 @@
     .justify-start-#{$name} {
       justify-content: flex-start;
     }
+    .justify-around-#{$name} {
+      justify-content: space-around;
+    }
+    .justify-between-#{$name} {
+      justify-content: space-between;
+    }
+    .justify-center-#{$name} {
+      justify-content: center;
+    }
     .align-items-#{$name} {
       align-items: center;
+    }
+    .align-end-#{$name} {
+      align-items: flex-end;
     }
   }
 }
