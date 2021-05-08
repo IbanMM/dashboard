@@ -47,6 +47,7 @@ export default {
   background-color: $primary;
   height: 0.5rem;
   border-radius: 0.25rem;
+  transition: all .3s linear;
 }
 .page-header-bar_text {
   padding-left: 1rem;
