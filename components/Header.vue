@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <div>avatar</div>
+    <avatar />
     <nav>
       <ul class="header-nav">
         <li>
