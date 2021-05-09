@@ -14,15 +14,24 @@ export default {
     state: {
       type: String,
       default: ''
+    },
+    minWidth: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {
     buttonClasses: function () {
+      let classes = ''
       if (this.state === 'primary') {
-        return 'button-primary'
+        classes = 'button-primary'
       } else {
-        return 'button-light'
+        classes = 'button-light'
       }
+      if (this.minWidth) {
+        classes += ' button-minw'
+      }
+      return classes
     }
   }
 }
@@ -37,6 +46,8 @@ export default {
   cursor: pointer;
   border: none;
   transition: all .2s linear;
+}
+.button-minw {
   min-width: 4.1875rem;
 }
 .button-primary {
