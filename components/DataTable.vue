@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <div v-else class="flex-xs justify-cemter-xs">
+    <div v-else class="flex-xs justify-center-xs">
       <loading
         :color="'#0077ff'"
         :color-background="'#b4bac6'"
