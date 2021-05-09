@@ -1,23 +1,23 @@
 <template>
   <div>
     <div v-if="tableData.length">
-      <div class="flex-lg">
+      <div class="display-none-xs flex-xl">
         <div v-for="(item,index) in tableHeader" :key="index" class="table_header" :class="item.class">
           <span>{{ item.label }}</span>
         </div>
-        <div class="table_header col-lg-2 flex-lg justify-end-lg">
+        <div class="table_header col-xl-2 flex-lg justify-end-lg">
           <span class="table_header_status">Status</span>
         </div>
       </div>
-      <div class="">
-        <div v-for="(dataItem,index) in tableData" :key="index">
-          <div class="flex-lg align-items-lg table_row">
+      <div>
+        <div v-for="(dataItem,index) in tableData" :key="index" class="table_row_container">
+          <div class="flex-xl align-items-lg table_row">
             <div v-for="(headerItem,indexh) in tableHeader" :key="indexh" :class="[headerItem.class]" :style="dataItemClass(headerItem)">
               <span v-if="headerItem.key==='time'">{{ randomTime }}</span>
               <span v-else-if="headerItem.subkey">{{ dataItem[headerItem.key][headerItem.subkey] }}</span>
               <span v-else>{{ dataItem[headerItem.key] }}</span>
             </div>
-            <div class="col-lg-2 flex-lg justify-end-lg">
+            <div class="col-xl-2 flex-xs justify-end-xs">
               <button-ui
                 :text="index > 5 ? 'Open' : 'Sent'"
                 :state="index > 5 ? 'light' : 'primary'"
@@ -90,7 +90,21 @@ export default {
   .table_header_status {
     margin-right: 1.2rem;
   }
+  .table_row_container {
+    &:last-child {
+      .table_row {
+        border-bottom: 0;
+      }
+    }
+  }
   .table_row {
+    border-bottom: 1px solid rgba($grey-100, 0.2);
+    padding: 1.3rem 0;
+    @include media-up('xl') {
+      border-bottom: none;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
     &:hover {
       background-color: rgba($grey-100, 0.1);
     }

@@ -21,6 +21,9 @@ export default {
     }
   },
   computed: {
+    /**
+     * Styles for the loading based in its props
+     */
     loadingClasses: function () {
       const styles = {
         width: this.size + 'rem',

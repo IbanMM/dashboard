@@ -1,10 +1,10 @@
 <template>
   <main class="main">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-xs-12 col-lg-6">
         <page-header text="Overview" />
       </div>
-      <div class="col-lg-6 flex-lg justify-end-lg">
+      <div class="col-xs-12 col-lg-6 flex-xs justify-center-xs justify-end-lg">
         <page-header-bar
           :bar-width="300"
           :bar-fill="100"
@@ -15,7 +15,7 @@
     </div>
     <div class="page-content">
       <div class="row row-border-bottom">
-        <div class="col-lg-5 col-border-right">
+        <div class="col-xs-12 col-xl-5 col-border-right">
           <chart
             :tit="'General Results'"
             :amount="9041"
@@ -23,7 +23,7 @@
             :bars="bars"
           />
         </div>
-        <div class="col-lg-5 col-border-right">
+        <div class="col-xs-12 col-xl-5 col-border-right">
           <chart
             :tit="'Ratings by Category'"
             :amount="3900"
@@ -32,7 +32,7 @@
             :color="'#f0166d'"
           />
         </div>
-        <div v-if="terms.length" class="col-lg-2 flex-lg flex-col-lg justify-center-lg align-items-lg">
+        <div v-if="terms.length" class="col-xs-12 col-xl-2 flex-xs flex-col-xs justify-center-xs align-items-xs">
           <ul class="terms_list">
             <li v-for="(term,index) in terms" :key="index" class="terms_list_li flex-xs">
               <span>
@@ -51,10 +51,10 @@
       </div>
     </div>
     <div class="row pagination">
-      <div class="col-xs-6">
+      <div class="col-xs-12 col-lg-6 flex-xs justify-center-xs justify-start-lg">
         <span class="pagination_text">Showing <strong>1</strong> to <strong>{{ users.length }}</strong> of <span>{{ users.length }} elements</span></span>
       </div>
-      <div class="col-xs-6 flex-xs justify-end-xs align-items-xs pagination_pages">
+      <div class="col-xs-12 col-lg-6 flex-xs justify-center-xs justify-end-lg align-items-xs pagination_pages">
         <span>Page</span>
         <ul class="flex-xs align-items-xs pagination_pages_list">
           <li><button-ui state="primary" text="1" :min-width="false" /></li>
@@ -149,29 +149,29 @@ export default {
         {
           label: 'Name',
           key: 'name',
-          class: 'col-lg-2',
+          class: 'col-xl-2',
           bold: true
         },
         {
           label: 'Email',
           key: 'email',
-          class: 'col-lg-2'
+          class: 'col-xl-2'
         },
         {
           label: 'Time',
           key: 'time',
-          class: 'col-lg-2'
+          class: 'col-xl-2'
         },
         {
           label: 'Phone number',
           key: 'phone',
-          class: 'col-lg-2'
+          class: 'col-xl-2'
         },
         {
           label: 'City',
           key: 'address',
           subkey: 'city',
-          class: 'col-lg-2'
+          class: 'col-xl-2'
         }
       ]
     }
@@ -213,7 +213,7 @@ export default {
   padding: 1.3rem;
 }
 .pagination {
-  margin-top: 1.3rem;
+  padding: 1.3rem 0;
 }
 .pagination_text {
   color: $grey-300;

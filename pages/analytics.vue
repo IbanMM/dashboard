@@ -1,6 +1,10 @@
 <template>
   <main class="main">
-    <p>main</p>
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <page-header text="Analytics" />
+      </div>
+    </div>
   </main>
 </template>
 

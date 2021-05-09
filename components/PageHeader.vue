@@ -20,5 +20,11 @@ export default {
   font-weight: 900;
   font-size: 1.5rem;
   color: $dark;
+  padding: 1.3rem 0;
+  text-align: center;
+  @include media-up('lg') {
+    padding: 0;
+    text-align: left;
+  }
 }
 </style>

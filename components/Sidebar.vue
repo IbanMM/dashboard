@@ -40,8 +40,16 @@
 <style lang="scss" scoped>
   .sidebar {
     grid-area: sidebar;
+    width: $sidebar-width;
     background-color: $light;
+    position: fixed;
+    top: $header-height;
+    left: 0;
     min-height: calc( 100vh - #{$header-height});
     border-right: 1px solid rgba($grey-100, 0.2);
+    display: none;
+    @include media-up('lg') {
+      display: block;
+    }
   }
 </style>

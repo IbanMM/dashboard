@@ -1,11 +1,11 @@
 <template>
   <div class="chart">
     <div class="row">
-      <div class="col-lg-8 ">
+      <div class="col-xs-12 col-lg-8">
         <h2 class="chart_tit">
           {{ tit }}
         </h2>
-        <div>
+        <div class="chart_amount_container">
           <strong class="chart_amount">{{ amount }}</strong>
           <span class="chart_amount_tit">{{ amountTit }}</span>
         </div>
@@ -16,7 +16,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 flex-xs justify-center-xs chart_circles">
+      <div class="col-xs-12 col-lg-4 flex-xs justify-center-xs chart_circles">
         <svg
           class="chart_circle"
           :height="radius * 2"
@@ -94,10 +94,13 @@ export default {
     return {
       normalizedRadius: 0,
       circumference: 0,
-      stroke: 8
+      stroke: 8 // Border size of the circle chart
     }
   },
   computed: {
+    /**
+     * Circle chart size
+     */
     strokeDashoffset () {
       return this.circumference - this.progress / 100 * this.circumference
     }
@@ -107,6 +110,9 @@ export default {
     this.circumference = this.normalizedRadius * 2 * Math.PI
   },
   methods: {
+    /**
+     * Styles for every bar
+     */
     barStyle (index, size) {
       const styles = {
         height: size + 'rem',
@@ -126,6 +132,12 @@ export default {
     font-weight: 700;
     font-size: 0.9rem;
     margin-bottom: 2rem;
+  }
+  .chart_amount_container {
+    padding-bottom: 1.3rem;
+    @include media-up('lg') {
+      padding-bottom: 0;
+    }
   }
   .chart_amount {
     font-size: 1.5rem;
@@ -155,6 +167,7 @@ export default {
   }
   .chart_circles {
     position: relative;
+    min-height: 8.75rem;
   }
   .chart_circle {
     position: absolute;

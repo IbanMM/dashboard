@@ -50,12 +50,17 @@ export default {
   transition: all .3s linear;
 }
 .page-header-bar_text {
-  padding-left: 1rem;
+  text-align: center;
+  padding-top: 1rem;
   font-size: 1.1rem;
   color: $grey-300;
   strong{
     font-weight: 700;
     color: $dark;
+  }
+  @include media-up('lg') {
+    padding-top: 0;
+    padding-left: 1rem;
   }
 }
 </style>

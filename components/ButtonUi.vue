@@ -21,6 +21,9 @@ export default {
     }
   },
   computed: {
+    /**
+     * Classes for each button style
+     */
     buttonClasses: function () {
       let classes = ''
       if (this.state === 'primary') {

@@ -40,5 +40,14 @@
     .flex-col-#{$name} {
       flex-direction: column;
     }
+    .flex-row-#{$name} {
+      flex-direction: row;
+    }
+    .display-none-#{$name} {
+      display: none;
+    }
+    .display-block-#{$name} {
+      display: block;
+    }
   }
 }
