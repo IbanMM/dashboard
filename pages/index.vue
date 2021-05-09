@@ -43,15 +43,34 @@
           </ul>
         </div>
       </div>
-      <div class="col-lg-12">
-        table
+      <div class="col-lg-12 table-container">
+        <data-table
+          :table-header="tableHeader"
+          :table-data="users"
+        />
+      </div>
+    </div>
+    <div class="row pagination">
+      <div class="col-xs-6">
+        <span class="pagination_text">Showing <strong>1</strong> to <strong>{{ users.length }}</strong> of <span>{{ users.length }} elements</span></span>
+      </div>
+      <div class="col-xs-6 flex-xs justify-end-xs align-items-xs pagination_pages">
+        <span>Page</span>
+        <ul class="flex-xs align-items-xs pagination_pages_list">
+          <li><button-ui state="primary" text="1" :min-width="false" /></li>
+          <li><span>...</span></li>
+          <li><button-ui text="2" :min-width="false" /></li>
+        </ul>
       </div>
     </div>
   </main>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
+import DataTable from '~/components/DataTable.vue'
 export default {
+  components: { DataTable },
   data () {
     return {
       bars: [
@@ -125,8 +144,49 @@ export default {
         {
           amount: '75.11'
         }
+      ],
+      tableHeader: [
+        {
+          label: 'Name',
+          key: 'name',
+          class: 'col-lg-2',
+          bold: true
+        },
+        {
+          label: 'Email',
+          key: 'email',
+          class: 'col-lg-2'
+        },
+        {
+          label: 'Time',
+          key: 'time',
+          class: 'col-lg-2'
+        },
+        {
+          label: 'Phone number',
+          key: 'phone',
+          class: 'col-lg-2'
+        },
+        {
+          label: 'City',
+          key: 'address',
+          subkey: 'city',
+          class: 'col-lg-2'
+        }
       ]
     }
+  },
+  async fetch () {
+    const allusers = await this.fetchAllUsers()
+  },
+  computed: {
+    ...mapGetters('users', ['getAllUsers']),
+    users: function () {
+      return this.getAllUsers
+    }
+  },
+  methods: {
+    ...mapActions('users', ['fetchAllUsers'])
   }
 }
 </script>
@@ -148,5 +208,36 @@ export default {
 }
 .terms_item_amount {
   color: $dark;
+}
+.table-container {
+  padding: 1.3rem;
+}
+.pagination {
+  margin-top: 1.3rem;
+}
+.pagination_text {
+  color: $grey-300;
+  strong {
+    font-weight: 700;
+    color: $dark;
+  }
+  span {
+    font-weight: 700;
+  }
+}
+.pagination_pages {
+  span {
+    color: $grey-300;
+    display: inline-block;
+    margin-right: 0.8rem;
+  }
+}
+.pagination_pages_list {
+  span {
+    display: inline-block;
+    color: $grey-300;
+    padding: 0 0.2rem;
+    margin-right: 0;
+  }
 }
 </style>
